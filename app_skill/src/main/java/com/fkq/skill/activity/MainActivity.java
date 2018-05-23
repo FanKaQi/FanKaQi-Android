@@ -1,4 +1,4 @@
-package com.fkq.project.activity;
+package com.fkq.skill.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,10 +10,10 @@ import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
 import com.fkq.common.custom.AppViewPager;
 import com.fkq.common.util.BottomNavigationViewUtil;
-import com.fkq.project.R;
-import com.fkq.project.fragment.OneFragment;
-import com.fkq.project.fragment.ThreeFragment;
-import com.fkq.project.fragment.TwoFragment;
+import com.fkq.skill.R;
+import com.fkq.skill.fragment.OneFragment;
+import com.fkq.skill.fragment.ThreeFragment;
+import com.fkq.skill.fragment.TwoFragment;
 
 import java.util.ArrayList;
 import java.util.List;

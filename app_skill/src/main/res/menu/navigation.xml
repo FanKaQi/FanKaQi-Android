@@ -7,14 +7,11 @@
         android:title="精选"/>
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_message"
         android:icon="@drawable/ic_message"
         android:title="消息" />
 
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_find"
-        android:title="发现" />
+
     <item
         android:id="@+id/navigation_my"
         android:icon="@drawable/ic_my"

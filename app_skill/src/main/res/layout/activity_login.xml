@@ -11,17 +11,34 @@
         android:background="@color/translucent"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="15dp"
-            android:src="@drawable/ic_back_white" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/iv_shared"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_close" />
+
+            <TextView
+                style="@style/text_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="注册"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
 
         <TextView
             style="@style/text_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="欢迎"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -42,7 +59,7 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="50dp"
             android:gravity="left"
-            android:hint="PhoneNumber"
+            android:hint="账户"
             android:textColor="@color/white"
             android:textColorHint="@color/grey61"
             android:theme="@style/WhiteLineEditText" />
@@ -55,19 +72,19 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
             android:gravity="left"
-            android:hint="Password"
+            android:hint="密码"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/grey51"
             android:theme="@style/WhiteLineEditText" />
 
         <Button
-            style="@style/text_ty"
+            style="@style/text_button"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_margin="50dp"
             android:background="@drawable/bt_login"
-            android:text="登录"
+            android:text="登    录"
             android:textColor="@color/white" />
 
         <View
@@ -112,18 +129,21 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/iv_qq_login"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/qq" />
 
             <ImageView
+                android:id="@+id/iv_wachat_login"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/weixin" />
 
             <ImageView
+                android:id="@+id/iv_xinlang_login"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"

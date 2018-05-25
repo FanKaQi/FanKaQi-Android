@@ -1,10 +1,14 @@
 package com.fkq.skill.activity;
 
+import android.Manifest;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.fkq.common.activity.BaseActivity;
 import com.fkq.skill.R;
+import com.fkq.skill.util.PermissionUtil;
 import com.fkq.skill.util.ShareSdkUtil;
+
 import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.wechat.friends.Wechat;
@@ -39,7 +43,9 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        PermissionUtil.requesPermissions(this, permissions);
     }
 
     @Override
@@ -50,13 +56,13 @@ public class LoginActivity extends BaseActivity {
                 ShareSdkUtil.getInstance().showShare(this);
                 break;
             case R.id.iv_qq_login:
-                ShareSdkUtil.getInstance().showLogin(this,QQ.NAME);
+                ShareSdkUtil.getInstance().showLogin(this, QQ.NAME);
                 break;
             case R.id.iv_wachat_login:
-                ShareSdkUtil.getInstance().showLogin(this,Wechat.NAME);
+                ShareSdkUtil.getInstance().showLogin(this, Wechat.NAME);
                 break;
             case R.id.iv_xinlang_login:
-                ShareSdkUtil.getInstance().showLogin(this,SinaWeibo.NAME);
+                ShareSdkUtil.getInstance().showLogin(this, SinaWeibo.NAME);
                 break;
         }
     }

@@ -31,6 +31,7 @@ android {
                     appId "wx4868b35061f87885"
                     appSecret "64020361b8ec4c99936c0e3999a9f249"
                     shareByAppClient true
+                    bypassApproval true
                 }
                 // 朋友圈
                 WechatMoments {
@@ -38,13 +39,13 @@ android {
                     appId "wx4868b35061f87885"
                     appSecret "64020361b8ec4c99936c0e3999a9f249"
                     shareByAppClient true
+                    bypassApproval true
                 }
                 // 微信收藏
                 WechatFavorite {
                     sortId 3
                     appId "wx4868b35061f87885"
                     appSecret "64020361b8ec4c99936c0e3999a9f249"
-                    shareByAppClient true
                 }
                 // QQ
                 QQ {
@@ -52,6 +53,7 @@ android {
                     appId "1106930326"
                     appKey "sV3wb6DpsUjNnru7"
                     shareByAppClient true
+                    bypassApproval true
                 }
                 // QQ空间
                 QZone {
@@ -59,6 +61,7 @@ android {
                     appId "1106930326"
                     appKey "sV3wb6DpsUjNnru7"
                     shareByAppClient true
+                    bypassApproval true
                 }
                 // 新浪
                 SinaWeibo {
@@ -67,6 +70,7 @@ android {
                     appSecret "1d7c2eea060efcdc942c94daed608e01"
                     callbackUri "http://www.sharesdk.cn"
                     shareByAppClient true
+                    bypassApproval true
                 }
             }
         }
@@ -75,5 +79,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.master.android:permissionhelper:2.0'
     compile project(path: ':lib_common')
 }

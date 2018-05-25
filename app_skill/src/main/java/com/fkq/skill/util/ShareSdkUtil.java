@@ -42,15 +42,32 @@ public class ShareSdkUtil {
     public void showShare(Context context) {
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
-        // oks.disableSSOWhenAuthorize();
+         oks.disableSSOWhenAuthorize();
         // title标题，微信、QQ和QQ空间等平台使用
-        oks.setTitle("Title");
+//        oks.setTitle("Title");
         // titleUrl QQ和QQ空间跳转链接
-        oks.setTitleUrl("http://sharesdk.cn");
+//        oks.setTitleUrl("http://sharesdk.cn");
+        oks.setImagePath("/storage/emulated/0/tencent/MicroMsg/WeiXin/mmexport1526456646606.jpg");
         // text是分享文本，所有平台都需要这个字段
-        oks.setText("我是分享文本");
+//        oks.setText("我是分享文本");
         // url在微信、微博，Facebook等平台中使用
         oks.setUrl("http://sharesdk.cn");
+        oks.setCallback(new PlatformActionListener() {
+            @Override
+            public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
+//                ToastUtil.show(AppManager.getInstance(), "取消" + platform.getName() + "授权登录");
+            }
+
+            @Override
+            public void onError(Platform platform, int i, Throwable throwable) {
+                ToastUtil.show(AppManager.getInstance(), "取消" + platform.getName() + "授权登录");
+            }
+
+            @Override
+            public void onCancel(Platform platform, int i) {
+                ToastUtil.show(AppManager.getInstance(), "取消" + platform.getName() + "授权登录");
+            }
+        });
         // 启动分享GUI
         oks.show(context);
     }
@@ -62,7 +79,7 @@ public class ShareSdkUtil {
      * @param platName
      */
     public void showLogin(final Context context, String platName) {
-        Platform plat = ShareSDK.getPlatform(platName);
+        final Platform plat = ShareSDK.getPlatform(platName);
         //授权回调监听
         plat.setPlatformActionListener(new PlatformActionListener() {
             @Override
@@ -94,6 +111,7 @@ public class ShareSdkUtil {
                 ToastUtil.show(AppManager.getInstance(), "取消" + platform.getName() + "授权登录");
             }
         });
+//        plat.authorize();
         plat.showUser(null);
     }
 

@@ -49,22 +49,22 @@ android {
                 // QQ
                 QQ {
                     sortId 4
-                    appId "100371282"
-                    appKey "aed9b0303e3ed1e27bae87c33761161d"
+                    appId "1106930326"
+                    appKey "sV3wb6DpsUjNnru7"
                     shareByAppClient true
                 }
                 // QQ空间
                 QZone {
                     sortId 5
-                    appId "100371282"
-                    appKey "aed9b0303e3ed1e27bae87c33761161d"
+                    appId "1106930326"
+                    appKey "sV3wb6DpsUjNnru7"
                     shareByAppClient true
                 }
                 // 新浪
                 SinaWeibo {
                     sortId 6
-                    appKey "170221996"
-                    appSecret "75314930606f946864ee0d7aeecc46ed"
+                    appKey "711574484"
+                    appSecret "1d7c2eea060efcdc942c94daed608e01"
                     callbackUri "http://www.sharesdk.cn"
                     shareByAppClient true
                 }

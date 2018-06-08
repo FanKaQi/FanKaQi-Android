@@ -45,7 +45,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:name=".util.AppManager"
         android:allowBackup="true"
@@ -62,9 +62,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.StickyActivity" />
+        <activity android:name=".activity.SmartRefreshActivity" />
+        <activity android:name=".arcgis.ArcgisActivity" />
+        <activity android:name=".arcgis.ArcgisListActivity" />
 
-        </activity>
         <!-- 调用QQ，需要注册的回调activity -->
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -92,7 +95,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
 
     </application>
 

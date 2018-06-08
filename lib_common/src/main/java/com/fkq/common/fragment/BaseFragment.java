@@ -13,7 +13,7 @@ import android.view.ViewGroup;
  * 基准Fragment
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements View.OnClickListener{
     //本地保存文件
     protected Context context;
     protected Activity activity;
@@ -55,4 +55,8 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void initData();
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }

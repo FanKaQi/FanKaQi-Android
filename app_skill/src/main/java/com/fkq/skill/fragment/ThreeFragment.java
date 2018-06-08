@@ -2,6 +2,7 @@ package com.fkq.skill.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -9,6 +10,7 @@ import com.fkq.common.custom.AppImageView;
 import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.skill.R;
 import com.fkq.skill.model.UserInfo;
+import com.fkq.skill.util.ShareSdkUtil;
 import com.fkq.skill.util.UserUtil;
 
 
@@ -16,6 +18,7 @@ public class ThreeFragment extends BaseLazyFragment {
 
     private AppImageView iv_head;
     private TextView tv_name;
+    private ImageView iv_share;
 
     @Override
     protected int setLayoutView() {
@@ -26,6 +29,8 @@ public class ThreeFragment extends BaseLazyFragment {
     protected void initView(View view, Bundle savedInstanceState) {
         iv_head = view.findViewById(R.id.iv_head);
         tv_name = view.findViewById(R.id.tv_name);
+        iv_share = view.findViewById(R.id.iv_share);
+        iv_share.setOnClickListener(this);
     }
 
     @Override
@@ -38,8 +43,16 @@ public class ThreeFragment extends BaseLazyFragment {
 
     @Override
     protected void loadData() {
-
     }
 
 
+    @Override
+    public void onClick(View view) {
+        super.onClick(view);
+        switch (view.getId()) {
+            case R.id.iv_share:
+                ShareSdkUtil.getInstance().showShareImage(context);
+                break;
+        }
+    }
 }

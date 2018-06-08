@@ -1,12 +1,10 @@
 package com.fkq.skill.activity;
 
-import android.Manifest;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.fkq.common.activity.BaseActivity;
 import com.fkq.skill.R;
-import com.fkq.skill.util.PermissionUtil;
 import com.fkq.skill.util.ShareSdkUtil;
 
 import cn.sharesdk.sina.weibo.SinaWeibo;
@@ -43,18 +41,12 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        PermissionUtil.requesPermissions(this, permissions);
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
         switch (v.getId()) {
-            case R.id.iv_shared:
-                ShareSdkUtil.getInstance().showShare(this);
-                break;
             case R.id.iv_qq_login:
                 ShareSdkUtil.getInstance().showLogin(this, QQ.NAME);
                 break;

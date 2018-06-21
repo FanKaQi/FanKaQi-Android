@@ -4,11 +4,14 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
+
 import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
 import com.fkq.common.custom.AppViewPager;
 import com.fkq.common.util.BottomNavigationViewUtil;
+import com.fkq.common.util.DrawerLayoutUtil;
 import com.fkq.mm.R;
 import com.fkq.mm.fragment.OneFragment;
 import com.fkq.mm.fragment.ThreeFragment;
@@ -27,6 +30,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private FragmentAdapter fragmentAdapter;
     private AppViewPager viewPager;
 
+    private DrawerLayout drawerLayout;
+
     @Override
     protected int setLayoutId() {
         return R.layout.activity_main;
@@ -38,6 +43,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         navigation = findViewById(R.id.navigation);
         BottomNavigationViewUtil.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+        //
+        drawerLayout = findViewById(R.id.dl_main);
+        DrawerLayoutUtil.addDrawerListener(drawerLayout);
     }
 
     @Override

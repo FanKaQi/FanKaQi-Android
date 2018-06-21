@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.fkq.common.util.CommonApplication;
+import com.gyf.barlibrary.ImmersionBar;
 
 
 /**
@@ -16,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
+        ImmersionBar.with(this).fitsSystemWindows(true).init();
         CommonApplication.getInstance().addActivity(this);
         initView();
         initData();
@@ -41,6 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ImmersionBar.with(this).destroy();
         CommonApplication.getInstance().removeActivity(this);
     }
 

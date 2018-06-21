@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gyf.barlibrary.ImmersionBar;
+
 
 /**
  * 基准Fragment
  */
 
-public abstract class BaseFragment extends Fragment implements View.OnClickListener{
+public abstract class BaseFragment extends Fragment implements View.OnClickListener {
     //本地保存文件
     protected Context context;
     protected Activity activity;
@@ -23,11 +25,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         super.onAttach(context);
         this.context = context;
         activity = getActivity();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -58,5 +55,14 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ImmersionBar immersionBar = ImmersionBar.with(this);
+        if (immersionBar != null) {
+            immersionBar.destroy();
+        }
     }
 }

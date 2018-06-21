@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+    android:id="@+id/dl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
-    <com.fkq.common.custom.AppViewPager
-        android:id="@+id/viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/gray">
-
-    </com.fkq.common.custom.AppViewPager>
+        android:orientation="vertical">
 
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+        <com.fkq.common.custom.AppViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/gray">
+
+        </com.fkq.common.custom.AppViewPager>
+
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemBackground="@color/white"
+            app:itemIconTint="@drawable/select_navigation_color"
+            app:itemTextColor="@drawable/select_navigation_color"
+            app:menu="@menu/navigation" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemBackground="@color/white"
-        app:itemIconTint="@drawable/select_navigation_color"
-        app:itemTextColor="@drawable/select_navigation_color"
-        app:menu="@menu/navigation" />
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="@color/white">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/iv_title"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

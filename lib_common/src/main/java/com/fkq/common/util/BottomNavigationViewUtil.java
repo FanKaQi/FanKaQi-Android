@@ -5,7 +5,6 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
-
 import java.lang.reflect.Field;
 
 /**
@@ -16,6 +15,7 @@ public class BottomNavigationViewUtil {
 
     /**
      * 多余三个去掉动画效果（避免发生位移）
+     *
      * @param view
      */
     @SuppressLint("RestrictedApi")
@@ -25,7 +25,6 @@ public class BottomNavigationViewUtil {
         try {
             //设置私有成员变量mShiftingMode可以修改
             Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
-            shiftingMode.setAccessible(true);
             shiftingMode.setBoolean(menuView, false);
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
@@ -40,5 +39,4 @@ public class BottomNavigationViewUtil {
             Log.e("BNVHelper", "无法修改mShiftingMode的值", e);
         }
     }
-
 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.fkq.common.util.CommonApplication;
+import com.fkq.common.util.ComApplication;
 
 
 /**
@@ -16,7 +16,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
-        CommonApplication.getInstance().addActivity(this);
+        ComApplication.getInstance().addActivity(this);
         initView();
         initData();
     }
@@ -41,7 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        CommonApplication.getInstance().removeActivity(this);
+        ComApplication.getInstance().removeActivity(this);
     }
 
     @Override

@@ -4,8 +4,8 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.fkq.project"
-        minSdkVersion  rootProject.ext.minSdkVersion
+        applicationId "com.fkq.person"
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"

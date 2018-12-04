@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gyf.barlibrary.ImmersionBar;
 
 
 /**
@@ -57,12 +56,4 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        ImmersionBar immersionBar = ImmersionBar.with(this);
-        if (immersionBar != null) {
-            immersionBar.destroy();
-        }
-    }
 }

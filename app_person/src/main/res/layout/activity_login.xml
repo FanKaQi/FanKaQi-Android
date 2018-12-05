@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translucent8"
+        android:orientation="vertical">
+
+
+        <com.fkq.common.custom.AppImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/logo" />
+
+        <EditText
+            android:id="@+id/et_username"
+            style="@style/text_ty"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="账户"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey51"
+            android:theme="@style/WhiteLineEditText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/grey51">
+
+        </View>
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/text_ty"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey51"
+            android:theme="@style/WhiteLineEditText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/grey51">
+
+        </View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></View>
+
+        <Button
+            android:id="@+id/bt_login"
+            style="@style/text_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="50dp"
+            android:background="@drawable/bt_login"
+            android:text="登    录"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</RelativeLayout>

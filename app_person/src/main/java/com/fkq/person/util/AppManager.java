@@ -24,6 +24,21 @@ import okhttp3.OkHttpClient;
  */
 
 public class AppManager extends ComApplication {
+    private static AppManager instance;
+
+    /**
+     * 单例模式
+     *
+     * @return
+     */
+    public static AppManager getInstance() {
+        if (instance == null) {
+            synchronized (AppManager.class) {
+                instance = new AppManager();
+            }
+        }
+        return instance;
+    }
 
     /**
      * 上拉下刷全局配置（优先级最低），static段防止内存泄露

@@ -4,18 +4,21 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.fkq.common.R;
 import com.fkq.common.util.ComApplication;
+import com.jaeger.library.StatusBarUtil;
 
 
 /**
  * 基准Activity 主干
  */
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorTheme), 0);
         ComApplication.getInstance().addActivity(this);
         initView();
         initData();

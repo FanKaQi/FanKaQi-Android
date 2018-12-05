@@ -1,5 +1,6 @@
 package com.fkq.person.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import com.fkq.person.R;
 import com.fkq.person.fragment.OneFragment;
 import com.fkq.person.fragment.ThreeFragment;
 import com.fkq.person.fragment.TwoFragment;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private AppViewPager viewPager;
 
     private DrawerLayout drawerLayout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        StatusBarUtil.setColorForDrawerLayout(this, drawerLayout, getResources().getColor(com.fkq.common.R.color.colorTheme),0);
+    }
 
     @Override
     protected int setLayoutId() {

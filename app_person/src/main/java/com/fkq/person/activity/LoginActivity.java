@@ -1,6 +1,5 @@
 package com.fkq.person.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +12,7 @@ import com.fkq.person.R;
 import com.fkq.person.constant.Constants;
 import com.fkq.person.custom.JsonCallBack;
 import com.fkq.person.model.JsonData;
-import com.jaeger.library.StatusBarUtil;
+import com.gyf.barlibrary.ImmersionBar;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
@@ -29,9 +28,9 @@ public class LoginActivity extends BaseActivity {
     private Button bt_login;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        StatusBarUtil.setTranslucentForImageView(this, 0, iv_logo);
+    protected void setStatusBar() {
+        super.setStatusBar();
+        ImmersionBar.with(this).reset().transparentStatusBar().init();
     }
 
     @Override

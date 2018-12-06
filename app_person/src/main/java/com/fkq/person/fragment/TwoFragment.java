@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.person.R;
+import com.gyf.barlibrary.ImmersionBar;
 
 
 public class TwoFragment extends BaseLazyFragment {
@@ -20,6 +21,7 @@ public class TwoFragment extends BaseLazyFragment {
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         iv_title = view.findViewById(R.id.iv_title);
+        ImmersionBar.with(this).reset().transparentStatusBar().init();
     }
 
     @Override

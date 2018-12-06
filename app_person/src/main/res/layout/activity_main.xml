@@ -4,13 +4,35 @@
     android:id="@+id/dl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorTheme"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:src="@drawable/ic_my" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/text_title"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_height="match_parent"
+                android:background="@color/colorTheme"
+                android:text="Person" />
+        </RelativeLayout>
 
 
         <com.fkq.common.custom.AppViewPager
@@ -22,6 +44,7 @@
 
         </com.fkq.common.custom.AppViewPager>
 
+        <View style="@style/view_line_width"></View>
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
@@ -33,18 +56,5 @@
             app:menu="@menu/navigation" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        android:background="@color/white">
-
-        <ImageView
-            android:id="@+id/iv_title"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo" />
-
-    </LinearLayout>
+    <include layout="@layout/menu_main"></include>
 </android.support.v4.widget.DrawerLayout>

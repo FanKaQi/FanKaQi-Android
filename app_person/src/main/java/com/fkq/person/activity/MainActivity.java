@@ -1,12 +1,16 @@
 package com.fkq.person.activity;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
@@ -17,7 +21,7 @@ import com.fkq.person.R;
 import com.fkq.person.fragment.OneFragment;
 import com.fkq.person.fragment.ThreeFragment;
 import com.fkq.person.fragment.TwoFragment;
-import com.jaeger.library.StatusBarUtil;
+import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +37,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private AppViewPager viewPager;
 
     private DrawerLayout drawerLayout;
+    private ImageView iv_menu;
+    private TextView tv_account_name;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        StatusBarUtil.setColorForDrawerLayout(this, drawerLayout, getResources().getColor(com.fkq.common.R.color.colorTheme),0);
+    protected void setStatusBar() {
+        super.setStatusBar();
+        ImmersionBar.with(this).reset().titleBar(findViewById(R.id.ll_view)).init();
     }
 
     @Override
@@ -47,6 +53,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     protected void initView() {
+        iv_menu = findViewById(R.id.iv_menu);
+        tv_account_name = findViewById(R.id.tv_account_name);
         viewPager = findViewById(R.id.viewPager);
         navigation = findViewById(R.id.navigation);
         BottomNavigationViewUtil.disableShiftMode(navigation);
@@ -54,6 +62,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         //
         drawerLayout = findViewById(R.id.dl_main);
         DrawerLayoutUtil.addDrawerListener(drawerLayout);
+        iv_menu.setOnClickListener(this);
+        tv_account_name.setOnClickListener(this);
     }
 
     @Override
@@ -71,6 +81,20 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         viewPager.setAdapter(fragmentAdapter);
         viewPager.setCurrentItem(0, false);
         viewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()) {
+            case R.id.iv_menu:
+                drawerLayout.openDrawer(Gravity.LEFT);
+                break;
+            case R.id.tv_account_name:
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     @Override

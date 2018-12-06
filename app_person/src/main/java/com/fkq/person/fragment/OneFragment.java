@@ -3,6 +3,7 @@ package com.fkq.person.fragment;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.person.R;
 
@@ -18,7 +19,7 @@ public class OneFragment extends BaseLazyFragment {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        tv_title = view.findViewById(R.id.tv_title);
+
     }
 
     @Override

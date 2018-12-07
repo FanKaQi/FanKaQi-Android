@@ -3,7 +3,7 @@ package com.fkq.skill.activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.common.adapter.RecyclerAdapter;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
@@ -27,7 +27,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class SmartRefreshActivity extends BaseActivity {
+public class SmartRefreshActivityCom extends ComBaseActivity {
     private RefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
@@ -59,7 +59,7 @@ public class SmartRefreshActivity extends BaseActivity {
                 holder.setOnClickListener(R.id.tv_name, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        SmartRefreshActivity activity = SmartRefreshActivity.this;
+                        SmartRefreshActivityCom activity = SmartRefreshActivityCom.this;
                         if (text.equals("1")) {
                             refreshLayout.setRefreshHeader(new MaterialHeader(activity).setShowBezierWave(true));
                             refreshLayout.setRefreshFooter(new BallPulseFooter(activity));

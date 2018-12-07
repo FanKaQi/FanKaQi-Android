@@ -10,9 +10,9 @@ import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.skill.R;
-import com.fkq.skill.activity.SmartRefreshActivity;
-import com.fkq.skill.activity.StickyActivity;
-import com.fkq.skill.arcgis.ArcgisListActivity;
+import com.fkq.skill.activity.SmartRefreshActivityCom;
+import com.fkq.skill.activity.StickyActivityCom;
+import com.fkq.skill.arcgis.ArcgisListActivityCom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,11 +46,11 @@ public class OneFragment extends BaseLazyFragment {
                     public void onClick(View view) {
                         Intent intent;
                         if (text.equals("StickyLayout")) {
-                            intent = new Intent(context, StickyActivity.class);
+                            intent = new Intent(context, StickyActivityCom.class);
                         } else if (text.equals("SmartRefreshLayout")) {
-                            intent = new Intent(context, SmartRefreshActivity.class);
+                            intent = new Intent(context, SmartRefreshActivityCom.class);
                         } else if (text.equals("Arcgis")) {
-                            intent = new Intent(context, ArcgisListActivity.class);
+                            intent = new Intent(context, ArcgisListActivityCom.class);
                         } else {
                             return;
                         }

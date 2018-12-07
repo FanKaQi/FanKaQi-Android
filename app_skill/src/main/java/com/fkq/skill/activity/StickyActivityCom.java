@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.androidkun.xtablayout.XTabLayout;
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
 import com.fkq.skill.R;
 import com.fkq.skill.fragment.StickyFragment;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class StickyActivity extends BaseActivity{
+public class StickyActivityCom extends ComBaseActivity {
     private ViewPager mViewPager;
     private XTabLayout mTabLayout;
     private FragmentAdapter fragmentAdapter;

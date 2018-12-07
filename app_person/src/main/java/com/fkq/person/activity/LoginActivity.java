@@ -5,7 +5,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.custom.AppImageView;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.person.R;
@@ -40,11 +39,11 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        iv_logo = findViewById(R.id.iv_logo);
-        iv_bg = findViewById(R.id.iv_bg);
-        et_username = findViewById(R.id.et_username);
-        et_password = findViewById(R.id.et_password);
-        bt_login = findViewById(R.id.bt_login);
+        iv_logo = (AppImageView) findViewById(R.id.iv_logo);
+        iv_bg = (ImageView) findViewById(R.id.iv_bg);
+        et_username = (EditText) findViewById(R.id.et_username);
+        et_password = (EditText) findViewById(R.id.et_password);
+        bt_login = (Button) findViewById(R.id.bt_login);
         bt_login.setOnClickListener(this);
     }
 

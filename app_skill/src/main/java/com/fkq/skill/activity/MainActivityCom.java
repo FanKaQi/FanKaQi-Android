@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
 import com.fkq.common.custom.AppViewPager;
 import com.fkq.common.util.BottomNavigationViewUtil;
@@ -18,7 +18,7 @@ import com.fkq.skill.fragment.TwoFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
+public class MainActivityCom extends ComBaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
         ViewPager.OnPageChangeListener {
 
     private BottomNavigationView navigation;

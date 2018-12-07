@@ -1,17 +1,18 @@
-package com.fkq.common.activity;
+package com.fkq.person.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.fkq.common.R;
 import com.fkq.common.util.ComApplication;
 import com.gyf.barlibrary.ImmersionBar;
 
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 /**
  * 基准Activity 主干
  */
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends SwipeBackActivity implements View.OnClickListener {
 
 
     @Override
@@ -19,9 +20,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
         ComApplication.getInstance().addActivity(this);
-        initView();
-        initData();
         setStatusBar();
+        initView();
+        setBackEnable();
+        initData();
     }
 
     /**
@@ -41,14 +43,20 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      */
     protected abstract void initData();
 
-
+    /**
+     * 设置状态栏
+     */
     protected void setStatusBar() {
-        ImmersionBar.with(this)
-                .statusBarColor(R.color.colorTheme)
-                .fitsSystemWindows(true)  //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
-                .init();
+        //使用该属性必须指定状态栏的颜色，不然状态栏透明，很难看
+        ImmersionBar.with(this).fitsSystemWindows(true, R.color.colorTheme).init();
     }
 
+    /**
+     * 设置是否可以返回侧滑
+     */
+    protected void setBackEnable() {
+        setSwipeBackEnable(true);
+    }
 
     @Override
     protected void onDestroy() {

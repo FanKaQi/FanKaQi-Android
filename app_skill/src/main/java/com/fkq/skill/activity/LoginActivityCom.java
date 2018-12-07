@@ -3,7 +3,7 @@ package com.fkq.skill.activity;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.skill.R;
 import com.fkq.skill.util.ShareSdkUtil;
 
@@ -15,7 +15,7 @@ import cn.sharesdk.wechat.friends.Wechat;
  * Created by Administrator on 2018/5/23.
  */
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivityCom extends ComBaseActivity {
 
     private ImageView iv_shared;
     private ImageView iv_qq_login;

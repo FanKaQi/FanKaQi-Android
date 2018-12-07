@@ -4,14 +4,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.skill.R;
 
 /**
  * Created by Administrator on 2018/5/29.
  */
 
-public class ArcgisActivity extends BaseActivity {
+public class ArcgisActivityCom extends ComBaseActivity {
 
 
     @Override

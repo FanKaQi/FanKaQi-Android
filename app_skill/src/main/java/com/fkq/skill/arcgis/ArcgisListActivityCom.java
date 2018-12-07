@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.fkq.common.activity.BaseActivity;
+import com.fkq.common.activity.ComBaseActivity;
 import com.fkq.common.adapter.RecyclerAdapter;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
@@ -17,7 +17,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class ArcgisListActivity extends BaseActivity {
+public class ArcgisListActivityCom extends ComBaseActivity {
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
     private List<String> data;
@@ -49,7 +49,7 @@ public class ArcgisListActivity extends BaseActivity {
                 holder.setOnClickListener(R.id.tv_name, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ArcgisListActivity.this, ArcgisActivity.class);
+                        Intent intent = new Intent(ArcgisListActivityCom.this, ArcgisActivityCom.class);
                         intent.putExtra("name", text);
                         startActivity(intent);
                     }

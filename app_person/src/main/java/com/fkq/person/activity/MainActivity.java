@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.adapter.FragmentAdapter;
 import com.fkq.common.custom.AppViewPager;
 import com.fkq.common.util.BottomNavigationViewUtil;
@@ -47,20 +46,26 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     }
 
     @Override
+    protected void setBackEnable() {
+        super.setBackEnable();
+        setSwipeBackEnable(false);
+    }
+
+    @Override
     protected int setLayoutId() {
         return R.layout.activity_main;
     }
 
     @Override
     protected void initView() {
-        iv_menu = findViewById(R.id.iv_menu);
-        tv_account_name = findViewById(R.id.tv_account_name);
-        viewPager = findViewById(R.id.viewPager);
-        navigation = findViewById(R.id.navigation);
+        iv_menu = (ImageView) findViewById(R.id.iv_menu);
+        tv_account_name = (TextView) findViewById(R.id.tv_account_name);
+        viewPager = (AppViewPager) findViewById(R.id.viewPager);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewUtil.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(this);
         //
-        drawerLayout = findViewById(R.id.dl_main);
+        drawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
         DrawerLayoutUtil.addDrawerListener(drawerLayout);
         iv_menu.setOnClickListener(this);
         tv_account_name.setOnClickListener(this);

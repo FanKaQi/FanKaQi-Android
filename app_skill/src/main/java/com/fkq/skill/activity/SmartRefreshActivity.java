@@ -27,7 +27,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class SmartRefreshActivityCom extends ComBaseActivity {
+public class SmartRefreshActivity extends ComBaseActivity {
     private RefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
@@ -59,7 +59,7 @@ public class SmartRefreshActivityCom extends ComBaseActivity {
                 holder.setOnClickListener(R.id.tv_name, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        SmartRefreshActivityCom activity = SmartRefreshActivityCom.this;
+                        SmartRefreshActivity activity = SmartRefreshActivity.this;
                         if (text.equals("1")) {
                             refreshLayout.setRefreshHeader(new MaterialHeader(activity).setShowBezierWave(true));
                             refreshLayout.setRefreshFooter(new BallPulseFooter(activity));

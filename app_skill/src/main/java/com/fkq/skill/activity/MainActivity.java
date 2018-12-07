@@ -18,7 +18,7 @@ import com.fkq.skill.fragment.TwoFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivityCom extends ComBaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
+public class MainActivity extends ComBaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
         ViewPager.OnPageChangeListener {
 
     private BottomNavigationView navigation;

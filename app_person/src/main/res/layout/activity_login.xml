@@ -13,16 +13,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/translucent8"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
 
-        <com.fkq.common.custom.AppImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/logo" />
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/tv_register"
+                style="@style/text_4"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="注册"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/text_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="欢迎"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/text_ty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_username"
@@ -33,10 +64,10 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="50dp"
             android:background="@null"
-            android:gravity="left"
+            android:gravity="center_vertical"
             android:hint="账户"
             android:textColor="@color/white"
-            android:textColorHint="@color/grey51"
+            android:textColorHint="@color/grey71"
             android:theme="@style/WhiteLineEditText" />
 
         <View
@@ -57,26 +88,20 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="30dp"
             android:background="@null"
-            android:gravity="left"
+            android:gravity="center_vertical"
             android:hint="密码"
             android:inputType="textPassword"
             android:textColor="@color/white"
-            android:textColorHint="@color/grey51"
+            android:textColorHint="@color/grey71"
             android:theme="@style/WhiteLineEditText" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginLeft="50dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginRight="50dp"
-            android:background="@color/grey51">
-
-        </View>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"></View>
+            android:background="@color/grey51" />
 
         <Button
             android:id="@+id/bt_login"
@@ -87,6 +112,69 @@
             android:background="@drawable/bt_login"
             android:text="登    录"
             android:textColor="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0.5dp"
+                android:background="@color/white"></View>
+
+            <TextView
+                style="@style/text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="用社交账号登录"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0.5dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_qq_login"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/qq" />
+
+            <ImageView
+                android:id="@+id/iv_wachat_login"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/weixin" />
+
+            <ImageView
+                android:id="@+id/iv_xinlang_login"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/weibo" />
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

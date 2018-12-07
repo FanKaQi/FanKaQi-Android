@@ -18,10 +18,10 @@ public abstract class BaseActivity extends SwipeBackActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(setLayoutId());
         ComApplication.getInstance().addActivity(this);
-        setStatusBar();
+        setContentView(setLayoutId());
         initView();
+        setStatusBar();
         setBackEnable();
         initData();
     }

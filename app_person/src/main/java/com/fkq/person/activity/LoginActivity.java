@@ -1,16 +1,19 @@
 package com.fkq.person.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.fkq.common.custom.AppImageView;
+import com.fkq.common.util.ToastUtil;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.person.R;
 import com.fkq.person.constant.Constants;
 import com.fkq.person.custom.JsonCallBack;
 import com.fkq.person.model.JsonData;
+import com.fkq.person.model.User;
 import com.gyf.barlibrary.ImmersionBar;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
@@ -21,10 +24,10 @@ import com.lzy.okgo.model.Response;
 
 public class LoginActivity extends BaseActivity {
     private ImageView iv_bg;
-    private AppImageView iv_logo;
     private EditText et_username;
     private EditText et_password;
     private Button bt_login;
+    private TextView tv_register;
 
     @Override
     protected void setStatusBar() {
@@ -39,12 +42,13 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        iv_logo = (AppImageView) findViewById(R.id.iv_logo);
         iv_bg = (ImageView) findViewById(R.id.iv_bg);
+        tv_register = (TextView) findViewById(R.id.tv_register);
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
         bt_login = (Button) findViewById(R.id.bt_login);
         bt_login.setOnClickListener(this);
+        tv_register.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +63,10 @@ public class LoginActivity extends BaseActivity {
             case R.id.bt_login:
                 login();
                 break;
+            case R.id.tv_register:
+                Intent intent = new Intent(this, RegisterActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
@@ -71,7 +79,9 @@ public class LoginActivity extends BaseActivity {
                     public void onSuccess(Response<JsonData> response) {
                         JsonData jsonData = response.body();
                         if (jsonData.getCode() == 0) {
-
+                            User user = (User) jsonData.getData();
+                        } else {
+                            ToastUtil.show(LoginActivity.this, jsonData.getMsg());
                         }
                     }
 

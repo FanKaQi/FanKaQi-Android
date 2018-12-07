@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.fkq.common.util.ToastUtil;
-import com.fkq.skill.activity.MainActivityCom;
+import com.fkq.skill.activity.MainActivity;
 import com.fkq.skill.model.UserInfo;
 
 import java.util.HashMap;
@@ -96,7 +96,7 @@ public class ShareSdkUtil {
                     info.setUserName(platDB.getUserName());
                     info.setUserIcon(platDB.getUserIcon());
                     UserUtil.getInstance().setUser(context, info);
-                    Intent intent = new Intent(context, MainActivityCom.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);
                     ((Activity) context).finish();
                 } else {

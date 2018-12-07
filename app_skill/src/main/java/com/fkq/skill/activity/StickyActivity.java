@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class StickyActivityCom extends ComBaseActivity {
+public class StickyActivity extends ComBaseActivity {
     private ViewPager mViewPager;
     private XTabLayout mTabLayout;
     private FragmentAdapter fragmentAdapter;

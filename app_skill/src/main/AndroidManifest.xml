@@ -56,16 +56,16 @@
         android:theme="@style/AppTheme"
         tools:replace="android:name">
 
-        <activity android:name=".activity.LoginActivityCom">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivityCom" />
-        <activity android:name=".activity.StickyActivityCom" />
-        <activity android:name=".activity.SmartRefreshActivityCom" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.StickyActivity" />
+        <activity android:name=".activity.SmartRefreshActivity" />
         <activity android:name=".arcgis.ArcgisActivityCom" />
         <activity android:name=".arcgis.ArcgisListActivityCom" />
 

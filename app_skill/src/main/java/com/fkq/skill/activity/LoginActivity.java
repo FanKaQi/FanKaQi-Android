@@ -15,7 +15,7 @@ import cn.sharesdk.wechat.friends.Wechat;
  * Created by Administrator on 2018/5/23.
  */
 
-public class LoginActivityCom extends ComBaseActivity {
+public class LoginActivity extends ComBaseActivity {
 
     private ImageView iv_shared;
     private ImageView iv_qq_login;

@@ -8,12 +8,14 @@ import android.widget.EditText;
 import com.fkq.common.util.ToastUtil;
 import com.fkq.person.R;
 import com.fkq.person.constant.Constants;
-import com.fkq.person.custom.JsonCallBack;
-import com.fkq.person.model.JsonData;
-import com.fkq.person.model.User;
+import com.fkq.person.util.DevicesUtil;
 import com.fkq.person.util.TitleUtil;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2018/5/23.
@@ -23,7 +25,6 @@ public class RegisterActivity extends BaseActivity {
     private EditText et_username;
     private EditText et_password_one, et_password_two;
     private Button bt_register;
-
 
 
     @Override
@@ -73,20 +74,20 @@ public class RegisterActivity extends BaseActivity {
             ToastUtil.show(RegisterActivity.this, "两次输入密码不一致");
             return;
         }
-        OkGo.<JsonData>get(Constants.url_login).params("name", username).params("password", passwordOne)
-                .execute(new JsonCallBack<JsonData>(JsonData.class) {
+        OkGo.<String>post(Constants.url_register).params("name", username).params("password", DevicesUtil.toMD5(passwordOne))
+                .execute(new StringCallback() {
                     @Override
-                    public void onSuccess(Response<JsonData> response) {
-                        JsonData jsonData = response.body();
-                        if (jsonData.getCode() == 0) {
-                            User user = (User) jsonData.getData();
-                        } else {
-                            ToastUtil.show(RegisterActivity.this, jsonData.getMsg());
+                    public void onSuccess(Response<String> response) {
+                        String body = response.body();
+                        try {
+                            JSONObject object = new JSONObject(body);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
 
                     @Override
-                    public void onError(Response<JsonData> response) {
+                    public void onError(Response<String> response) {
                         super.onError(response);
                     }
                 });

@@ -18,7 +18,7 @@
         android:background="@null"
         android:gravity="center_vertical"
         android:hint="账户"
-        android:textColor="@color/white"
+        android:textColor="@color/colorFont"
         android:textColorHint="@color/grey71"
         android:theme="@style/WhiteLineEditText" />
 
@@ -43,7 +43,7 @@
         android:gravity="center_vertical"
         android:hint="密码"
         android:inputType="textPassword"
-        android:textColor="@color/white"
+        android:textColor="@color/colorFont"
         android:textColorHint="@color/grey71"
         android:theme="@style/WhiteLineEditText" />
 
@@ -66,7 +66,7 @@
         android:gravity="center_vertical"
         android:hint="密码"
         android:inputType="textPassword"
-        android:textColor="@color/white"
+        android:textColor="@color/colorFont"
         android:textColorHint="@color/grey71"
         android:theme="@style/WhiteLineEditText" />
 

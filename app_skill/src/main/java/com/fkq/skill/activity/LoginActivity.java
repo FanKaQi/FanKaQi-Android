@@ -1,15 +1,18 @@
 package com.fkq.skill.activity;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.fkq.common.activity.ComBaseActivity;
+import com.fkq.common.util.ToastUtil;
 import com.fkq.skill.R;
-import com.fkq.skill.util.ShareSdkUtil;
 
-import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.tencent.qq.QQ;
-import cn.sharesdk.wechat.friends.Wechat;
+import me.shaohui.shareutil.LoginUtil;
+import me.shaohui.shareutil.login.LoginListener;
+import me.shaohui.shareutil.login.LoginPlatform;
+import me.shaohui.shareutil.login.LoginResult;
 
 /**
  * Created by Administrator on 2018/5/23.
@@ -48,14 +51,44 @@ public class LoginActivity extends ComBaseActivity {
         super.onClick(v);
         switch (v.getId()) {
             case R.id.iv_qq_login:
-                ShareSdkUtil.getInstance().showLogin(this, QQ.NAME);
+                login(LoginPlatform.QQ);
+//                ShareSdkUtil.getInstance().showLogin(this, QQ.NAME);
                 break;
             case R.id.iv_wachat_login:
-                ShareSdkUtil.getInstance().showLogin(this, Wechat.NAME);
+                login(LoginPlatform.WX);
+//                ShareSdkUtil.getInstance().showLogin(this, Wechat.NAME);
                 break;
             case R.id.iv_xinlang_login:
-                ShareSdkUtil.getInstance().showLogin(this, SinaWeibo.NAME);
+                login(LoginPlatform.WEIBO);
+//                ShareSdkUtil.getInstance().showLogin(this, SinaWeibo.NAME);
                 break;
         }
+    }
+
+    private void login(int platform) {
+        // LoginPlatform.WEIBO  微博登录
+        // LoginPlatform.WX     微信登录
+        // LoginPlatform.QQ     QQ登录
+        LoginListener listener = new LoginListener() {
+            @Override
+            public void loginSuccess(LoginResult result) {
+                //登录成功， 如果你选择了获取用户信息，可以通过
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void loginFailure(Exception e) {
+                Log.i("TAG", "登录失败");
+                ToastUtil.show(LoginActivity.this, "登录失败");
+            }
+
+            @Override
+            public void loginCancel() {
+                Log.i("TAG", "登录取消");
+                ToastUtil.show(LoginActivity.this, "登录取消");
+            }
+        };
+        LoginUtil.login(this, platform, listener, true);
     }
 }

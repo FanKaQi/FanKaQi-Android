@@ -10,8 +10,10 @@ import com.fkq.common.custom.AppImageView;
 import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.skill.R;
 import com.fkq.skill.model.UserInfo;
-import com.fkq.skill.util.ShareSdkUtil;
 import com.fkq.skill.util.UserUtil;
+
+import me.shaohui.shareutil.ShareUtil;
+import me.shaohui.shareutil.share.SharePlatform;
 
 
 public class ThreeFragment extends BaseLazyFragment {
@@ -51,7 +53,7 @@ public class ThreeFragment extends BaseLazyFragment {
         super.onClick(view);
         switch (view.getId()) {
             case R.id.iv_share:
-                ShareSdkUtil.getInstance().showShareImage(context);
+                ShareUtil.shareText(context, SharePlatform.WX, "分享文字", null);
                 break;
         }
     }

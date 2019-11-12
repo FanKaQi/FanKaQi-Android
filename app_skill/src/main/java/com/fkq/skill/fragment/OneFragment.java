@@ -10,7 +10,7 @@ import com.fkq.common.fragment.BaseLazyFragment;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.skill.R;
-import com.fkq.skill.activity.RecyclerActivity2;
+import com.fkq.skill.activity.PhotoActivity;
 import com.fkq.skill.activity.SmartRefreshActivity;
 import com.fkq.skill.activity.StickyActivity;
 import com.fkq.skill.arcgis.ArcgisListActivity;
@@ -47,7 +47,7 @@ public class OneFragment extends BaseLazyFragment {
                     public void onClick(View view) {
                         Intent intent = null;
                         if (text.equals("RecyclerView")) {
-                            intent = new Intent(context, RecyclerActivity2.class);
+                            intent = new Intent(context, PhotoActivity.class);
                         } else if (text.equals("StickyLayout")) {
                             intent = new Intent(context, StickyActivity.class);
                         } else if (text.equals("SmartRefreshLayout")) {

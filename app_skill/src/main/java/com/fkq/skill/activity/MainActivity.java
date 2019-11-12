@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
         data = new ArrayList<>();
-        data.add("RecyclerView");
+        data.add("相册浏览");
         data.add("StickyLayout");
         data.add("图片选择-SmartRefresh");
         data.add("Arcgis");
@@ -45,8 +45,8 @@ public class MainActivity extends BaseActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent;
-                        if (text.equals("RecyclerView")) {
-                            intent = new Intent(MainActivity.this, RecyclerActivity2.class);
+                        if (text.equals("相册浏览")) {
+                            intent = new Intent(MainActivity.this, PhotoActivity.class);
                         } else if (text.equals("StickyLayout")) {
                             intent = new Intent(MainActivity.this, StickyActivity.class);
                         } else if (text.equals("图片选择-SmartRefresh")) {
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
             }
 
         };
-        ViewUtil.getVRows(this, recyclerView, 1);
+        ViewUtil.getVRows(this, recyclerView, 2);
         recyclerView.setAdapter(adapter);
     }
 

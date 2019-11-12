@@ -2,23 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="260dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/style_bg_white_radius"
+    android:background="@drawable/com_bg_button"
     android:orientation="vertical"
     android:padding="20dp">
 
     <TextView
-        style="@style/text_ty_black"
+        style="@style/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="版本升级"
         android:textSize="16sp"
-        android:textColor="@color/black"
         android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/tv_content"
-        style="@style/text_ty_black"
+        style="@style/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -32,20 +31,20 @@
 
         <TextView
             android:id="@+id/tv_cancel"
-            style="@style/text_ty_black"
+            style="@style/text_ty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="以后再说"
-            android:textColor="@color/font" />
+            android:textColor="@color/gray" />
 
 
         <TextView
             android:id="@+id/tv_update"
-            style="@style/text_ty_black"
+            style="@style/text_ty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="立即更新"
-            android:textColor="@color/colorTheme" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 </LinearLayout>

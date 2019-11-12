@@ -17,7 +17,7 @@ import java.util.List;
  * 带粘性多布局RecycleView
  */
 
-public class RecyclerActivity2 extends BaseActivity {
+public class PhotoActivity extends BaseActivity {
     private RecyclerView recycleView;
     private List<MyData2> list;
 

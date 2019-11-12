@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.hylink.police.R;
+import com.fkq.skill.R;
 
 
 public class BaseDialog extends Dialog {

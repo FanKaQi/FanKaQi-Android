@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义MLImageView的属性 加上了自己的前缀，防止和其他自定义控件冲突-->
+    <declare-styleable name="MLImageView">
+        <attr name="ml_border_color" format="color" />
+        <attr name="ml_border_width" format="dimension" />
+        <attr name="ml_press_alpha" format="integer" />
+        <attr name="ml_press_color" format="color" />
+        <attr name="ml_radius" format="dimension" />
+        <attr name="ml_shape_type" format="enum">
+            <enum name="none" value="0" />
+            <enum name="round" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="TitleLayout">
+        <attr name="title" format="string" />
+        <attr name="tv_tool" format="string" />
+        <attr name="iv_tool" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingLayout">
+        <attr name="loadingView" format="reference" />
+        <attr name="stateView" format="reference" />
+        <attr name="emptyView" format="reference" />
+    </declare-styleable>
+
+    <!--头像样式-->
+    <declare-styleable name="AvatarImageView">
+        <attr name="aiv_TextSizeRatio" format="reference|float" />
+        <attr name="aiv_TextMaskRatio" format="reference|float" />
+        <attr name="aiv_BoarderColor" format="reference|color" />
+        <attr name="aiv_TextColor" format="reference|color" />
+        <attr name="aiv_BoarderWidth" format="reference|dimension" />
+        <attr name="aiv_ShowBoarder" format="reference|boolean" />
+        <attr name="aiv_CornerRadius" format="reference|dimension" />
+    </declare-styleable>
+    <declare-styleable name="LabelView">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="textTitleColor" format="color"/>
+        <attr name="textContentColor" format="color"/>
+
+        <attr name="textTitle" format="string"/>
+        <attr name="textContent" format="string"/>
+
+        <attr name="textTitleSize" format="dimension"/>
+        <attr name="textContentSize" format="dimension"/>
+
+        <attr name="labelTopPadding" format="dimension"/>
+        <attr name="labelCenterPadding" format="dimension"/>
+        <attr name="labelBottomPadding" format="dimension"/>
+        <attr name="labelTopDistance" format="dimension"/>
+
+        <attr name="textTitleStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+
+        <attr name="textContentStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+
+        <attr name="direction">
+            <enum name="leftTop" value="-45"/>
+            <enum name="rightTop" value="45"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -13,7 +13,7 @@ import com.fkq.skill.R;
 import com.fkq.skill.activity.RecyclerActivity2;
 import com.fkq.skill.activity.SmartRefreshActivity;
 import com.fkq.skill.activity.StickyActivity;
-import com.fkq.skill.arcgis.ArcgisListActivityCom;
+import com.fkq.skill.arcgis.ArcgisListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class OneFragment extends BaseLazyFragment {
                         } else if (text.equals("SmartRefreshLayout")) {
                             intent = new Intent(context, SmartRefreshActivity.class);
                         } else if (text.equals("Arcgis")) {
-                            intent = new Intent(context, ArcgisListActivityCom.class);
+                            intent = new Intent(context, ArcgisListActivity.class);
                         } else {
                             return;
                         }

@@ -4,7 +4,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.fkq.common.activity.ComBaseActivity;
+import com.fkq.common.activity.BaseActivity;
 import com.fkq.skill.R;
 import com.fkq.skill.adapter.MyRecyclerAdapter;
 import com.fkq.skill.model.MyData;
@@ -16,7 +16,7 @@ import java.util.List;
  * 不带粘性多布局RecycleView
  */
 
-public class RecyclerActivity extends ComBaseActivity {
+public class RecyclerActivity extends BaseActivity {
     private RecyclerView recycleView;
     private List<MyData> list;
 

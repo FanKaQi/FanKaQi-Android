@@ -1,1 +1,1 @@
-include ':app_skill', ':lib_common', ':app_person'
+include ':app_skill', ':lib_common', ':app_project'

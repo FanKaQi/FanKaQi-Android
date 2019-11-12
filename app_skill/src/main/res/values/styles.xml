@@ -14,4 +14,11 @@
         <item name="colorControlActivated">@color/colorTheme</item>
 
     </style>
+
+    <style name="ThemeDialog" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/colorTheme</item>
+        <item name="android:colorPrimary">@color/colorTheme</item>
+        <item name="android:colorPrimaryDark">@color/colorTheme</item>
+
+    </style>
 </resources>

@@ -3,20 +3,12 @@ package com.fkq.skill.activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.fkq.common.activity.ComBaseActivity;
+import com.fkq.common.activity.BaseActivity;
 import com.fkq.common.adapter.RecyclerAdapter;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.skill.R;
-import com.scwang.smartrefresh.header.BezierCircleHeader;
-import com.scwang.smartrefresh.header.DeliveryHeader;
-import com.scwang.smartrefresh.header.MaterialHeader;
-import com.scwang.smartrefresh.header.PhoenixHeader;
-import com.scwang.smartrefresh.header.StoreHouseHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
-import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
-import com.scwang.smartrefresh.layout.footer.FalsifyFooter;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
@@ -27,7 +19,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/29.
  */
 
-public class SmartRefreshActivity extends ComBaseActivity {
+public class SmartRefreshActivity extends BaseActivity {
     private RefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
@@ -60,22 +52,7 @@ public class SmartRefreshActivity extends ComBaseActivity {
                     @Override
                     public void onClick(View view) {
                         SmartRefreshActivity activity = SmartRefreshActivity.this;
-                        if (text.equals("1")) {
-                            refreshLayout.setRefreshHeader(new MaterialHeader(activity).setShowBezierWave(true));
-                            refreshLayout.setRefreshFooter(new BallPulseFooter(activity));
-                        } else if (text.equals("2")) {
-                            refreshLayout.setRefreshHeader(new PhoenixHeader(activity));
-                            refreshLayout.setRefreshFooter(new ClassicsFooter(activity));
-                        } else if (text.equals("3")) {
-                            refreshLayout.setRefreshHeader(new StoreHouseHeader(activity));
-                            refreshLayout.setRefreshFooter(new FalsifyFooter(activity));
-                        }else if (text.equals("4")) {
-                            refreshLayout.setRefreshHeader(new BezierCircleHeader(activity));
-                            refreshLayout.setRefreshFooter(new BallPulseFooter(activity));
-                        }else if (text.equals("5")) {
-                            refreshLayout.setRefreshHeader(new DeliveryHeader(activity));
-                            refreshLayout.setRefreshFooter(new BallPulseFooter(activity));
-                        }
+
 
                     }
                 });

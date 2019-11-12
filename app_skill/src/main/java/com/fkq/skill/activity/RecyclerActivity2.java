@@ -3,7 +3,7 @@ package com.fkq.skill.activity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.fkq.common.activity.ComBaseActivity;
+import com.fkq.common.activity.BaseActivity;
 import com.fkq.skill.R;
 import com.fkq.skill.adapter.StickySectionRecyclerAdapter;
 import com.fkq.skill.custom.StickyDecoration;
@@ -17,7 +17,7 @@ import java.util.List;
  * 带粘性多布局RecycleView
  */
 
-public class RecyclerActivity2 extends ComBaseActivity {
+public class RecyclerActivity2 extends BaseActivity {
     private RecyclerView recycleView;
     private List<MyData2> list;
 

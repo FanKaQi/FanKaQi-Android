@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FanKaQi.iml" filepath="$PROJECT_DIR$/FanKaQi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FanKaQi-Android.iml" filepath="$PROJECT_DIR$/FanKaQi-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app_project/app_project.iml" filepath="$PROJECT_DIR$/app_project/app_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app_skill/app_skill.iml" filepath="$PROJECT_DIR$/app_skill/app_skill.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />

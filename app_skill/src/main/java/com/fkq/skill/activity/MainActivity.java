@@ -2,6 +2,7 @@ package com.fkq.skill.activity;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateUtils;
 import android.view.View;
 
 import com.fkq.common.activity.BaseActivity;
@@ -9,9 +10,10 @@ import com.fkq.common.adapter.RecyclerAdapter;
 import com.fkq.common.model.RecyclerHolder;
 import com.fkq.common.util.ViewUtil;
 import com.fkq.skill.R;
-import com.fkq.skill.arcgis.ArcgisListActivity;
+import com.fkq.skill.util.DataUtil;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -32,11 +34,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        data = new ArrayList<>();
-        data.add("相册浏览");
-        data.add("StickyLayout");
-        data.add("图片选择-SmartRefresh");
-        data.add("Arcgis");
+        data = DataUtil.getSkillString();
         adapter = new RecyclerAdapter<String>(this, data, R.layout.item_text) {
             @Override
             public void convert(RecyclerHolder holder, final String text) {
@@ -44,18 +42,8 @@ public class MainActivity extends BaseActivity {
                 holder.setOnClickListener(R.id.tv_name, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent;
-                        if (text.equals("相册浏览")) {
-                            intent = new Intent(MainActivity.this, PhotoActivity.class);
-                        } else if (text.equals("StickyLayout")) {
-                            intent = new Intent(MainActivity.this, StickyActivity.class);
-                        } else if (text.equals("图片选择-SmartRefresh")) {
-                            intent = new Intent(MainActivity.this, SmartRefreshActivity.class);
-                        } else if (text.equals("Arcgis")) {
-                            intent = new Intent(MainActivity.this, ArcgisListActivity.class);
-                        } else {
-                            return;
-                        }
+                        Intent intent = new Intent(MainActivity.this, SkillActivity.class);
+                        intent.putExtra("skill", text);
                         startActivity(intent);
                     }
                 });

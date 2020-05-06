@@ -15,19 +15,10 @@ import com.fkq.common.custom.DividerDecoration;
 import java.util.Random;
 
 
-/**
- * Created by Administrator on 2017/7/7.
- */
-
 public class ViewUtil {
 
     /**
      * 多行垂直滑动RecyclerView
-     *
-     * @param context
-     * @param recyclerView
-     * @param row
-     * @return
      */
     public static void getVRows(Context context, RecyclerView recyclerView, int row) {
         //设置layoutManager
@@ -48,11 +39,6 @@ public class ViewUtil {
 
     /**
      * 多行水平滑动RecyclerView
-     *
-     * @param context
-     * @param recyclerView
-     * @param row
-     * @return
      */
     public static void getHRows(Context context, RecyclerView recyclerView, int row) {
         //设置layoutManager

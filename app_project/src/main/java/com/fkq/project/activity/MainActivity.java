@@ -34,7 +34,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private ThreeFragment threeFragment;
     private FragmentAdapter fragmentAdapter;
     private AppViewPager viewPager;
-
     private DrawerLayout drawerLayout;
     private ImageView iv_menu;
     private TextView tv_account_name;
